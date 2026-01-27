@@ -10,13 +10,22 @@ class Colegio():
         self.alumnos = {} #id - alumno
         self.profesores = {} #id - profesor
         self.asignatura = {} #id - asignatura
-        self.clases = [] #listas de clases
-    
-    #Con este metodo añadimos un alumno a la lista de alumnos del colegio
+        self.clases = [] #listas de clases del colegio
+
+    #GESTIÓN ALUMNOS
     def addAlumno (self, alumno : Alumno):
         self.alumnos[alumno.Alumno.id] = alumno
+    def eliminarAlumno(self, idElimiar):
+        self.alumnos.pop(idElimiar)
+    def buscarAlumno (self, alumnoMostrar:Alumno, idBusqueda):
+        alumnoMostrar = self.alumnos[idBusqueda]
+        print(alumnoMostrar.Alumno.mostrar_info())
+
+    #GESTIÓN PROFESORES
     def addProfesor(self, profesor : Profesor):
         self.profesores[profesor.Profesor]
+    def eliminarProfesor(self, idEliminar):
+        self.profesores.pop(idEliminar)
 
 
 

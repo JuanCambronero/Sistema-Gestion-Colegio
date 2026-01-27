@@ -1,8 +1,10 @@
 # Clase abstracta Persona 
-class Persona:
-    # Constructor vacío
-    def __init__(self):
-        pass
+class Personas:
+    #CONSTRUCTOR
+    def __init__(self, id: int, nombre: str, email: str):
+        self.idPersona = id
+        self.nombre = nombre.strip()
+        self.email = email.strip()
 
     # SETTERS 
     def idPersona(self, id: int) -> None:
