@@ -1,1 +1,1 @@
-#Colrgio
+#Colegio
