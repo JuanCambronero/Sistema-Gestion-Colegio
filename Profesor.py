@@ -15,11 +15,19 @@ class Profesor(Personas):
         #guardamos el departamento de la asignatura que imparte
         self.departamento=departamento
         
+        #creo una lista vacia para las asignaturas que da el profesor
+        self.asignaturas=[]
         
-        #getter obtenemos el departamento
         
-        def get_departamento(self):
-            return self.departamento
+    #getter para obtener departamentos
+        
+    def get_departamento(self):
+        return self.departamento
+    
+    
+    #geeter para obtener asignaturas
+    def get_asignaturas(self):
+        return self.asignaturas
         
         
 
