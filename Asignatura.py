@@ -3,11 +3,11 @@ from Profesor import Profesor
 
 class Asignatura:
     #Constructor de Asignatura
-    def __init__(self, id, nombre, profesor:Profesor, alumno: None):
+    def __init__(self, id, nombre, profesor:Profesor, alumno: list):
         self.id= id
         self.nombre=nombre
         self.profesor=profesor
-        self.alumno=alumno if alumno is not None else []
+        self.alumno= []
 
     #getter
     @property
