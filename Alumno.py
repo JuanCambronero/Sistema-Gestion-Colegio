@@ -14,3 +14,4 @@ class Alumno(Personas.Personas):
         super().mostrar_info()  # Info de Personas
         print(f"  Curso: {self.curso}")
         print(f"  Calificaciones: {len(self.calificaciones)} asignaturas")
+
