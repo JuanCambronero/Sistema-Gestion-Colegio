@@ -44,13 +44,13 @@ class Asignatura:
         self.alumno=nuevoAlumno
     
     #Metodo para asignar Profesor
-    def asignarProfesor(self,profesor:Profesor): 
-        self.profesor=profesor
+    def asignarProfesor(self,profesorAsignar:Profesor): 
+        self.profesor=profesorAsignar
 
     #Metodo para inscribir alumno
-    def inscribirAlumno(self, alumnos):
-        if alumnos not in self.alumno:
-            self.alumno.append(alumnos)
+    def inscribirAlumno(self, alumnosAsignar):
+        if alumnosAsignar not in self.alumno:
+            self.alumno.append(alumnosAsignar)
 
     #Metodo para listar alumnos
     def listar(self):
