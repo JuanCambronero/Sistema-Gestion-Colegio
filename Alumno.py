@@ -1,17 +1,11 @@
-import Personas
-
-class Alumno(Personas.Personas):
-    #CONSTRUCTOR
-    def __init__(self, id_persona: int, nombre: str, email: str, curso: str):
-        super().__init__(id_persona, nombre, email) 
-        self.curso = curso
-        self.calificaciones = {}  # id_asignatura → lista notas
-    
-    def id(self):  
-        return super().obtener_id()
-    
-    def mostrar_info(self):
-        super().mostrar_info()  # Info de Personas
-        print(f"  Curso: {self.curso}")
-        print(f"  Calificaciones: {len(self.calificaciones)} asignaturas")
-
+from Personas import Personas
+#Clase Alumno hereda como profesor de clase Persona
+class Alumno(Personas):
+    #Constructor con atributo extra grupo
+    def __init__(self, id: int, nombre: str, email: str, grupo: str):
+        #Hereda de Persona
+        super().__init__(id, nombre, email)
+        self.grupo = grupo
+#Metodo personalizado heredado de Persona
+    def mostrarInfo(self) -> str:
+        return f"Grupo: {self.grupo}"

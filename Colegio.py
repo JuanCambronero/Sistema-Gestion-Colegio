@@ -3,29 +3,38 @@ import Alumno
 import Profesor
 
 
-class Colegio():
-    #Este constructor inicia la clase recibiendo el nombre del colegio para ello
+import Alumno
+import Profesor
+
+class Colegio:
+
     def __init__(self, nombre: str):
         self.nombre = nombre
-        self.alumnos = {} #id - alumno
-        self.profesores = {} #id - profesor
-        self.asignatura = {} #id - asignatura
-        self.clases = [] #listas de clases del colegio
+        self.alumnos = {} 
+        self.profesores = {} 
+        self.asignatura = {} 
+        self.clases = [] 
 
-    #GESTIÓN ALUMNOS
-    def addAlumno (self, alumno : Alumno):
-        self.alumnos[alumno.Alumno.id] = alumno
-    def eliminarAlumno(self, idElimiar):
-        self.alumnos.pop(idElimiar)
-    def buscarAlumno (self, alumnoMostrar:Alumno, idBusqueda):
-        alumnoMostrar = self.alumnos[idBusqueda]
-        print(alumnoMostrar.Alumno.mostrar_info())
+    # GESTIÓN ALUMNOS
+    def addAlumno (self, alumnoAdd : Alumno.Alumno):
+        self.alumnos[alumnoAdd.idPersona] = alumnoAdd
 
-    #GESTIÓN PROFESORES
-    def addProfesor(self, profesor : Profesor):
-        self.profesores[profesor.Profesor]
+    def eliminarAlumno(self, idEliminar):
+        self.alumnos.pop(idEliminar, None)
+
+    def buscarAlumno (self, idBusqueda):
+        alumno = self.alumnos.get(idBusqueda)
+        if alumno:
+            alumno.mostrar_info()
+        else:
+            print("Alumno NO encontrado")
+
+    # GESTIÓN PROFESORES  
+    def addProfesor(self, profesor : Profesor.Profesor):
+        self.profesores[profesor.idPersona] = profesor
+
     def eliminarProfesor(self, idEliminar):
-        self.profesores.pop(idEliminar)
+        self.profesores.pop(idEliminar, None)
 
 
 

@@ -1,58 +1,21 @@
-#Asignatura
-from Profesor import Profesor
+#Esta clase simula una asignatura formada por profesor y alumnos
 
 class Asignatura:
-    #Constructor de Asignatura
-    def __init__(self, id, nombre, profesor:Profesor, alumno: list):
-        self.id= id
-        self.nombre=nombre
-        self.profesor=profesor
-        self.alumno= []
+    #Constructor con los atribustos de la clase
+    def __init__(self, id: str, nombre: str):
+        self.id = id
+        self.nombre = nombre
+        self.profesor_id = None
+        self.alumnos_ids = []
+    #Metodo para asignar x profesor a la asignatura 
+    def asignar_profesor(self, profesorAsignar: str):
+        self.profesor_id = profesorAsignar
+    #Metodo para añadir alumnos inscritos a la asignatura
+    def inscribir_alumno(self, alumno_id: int):
+        if alumno_id not in self.alumnos_ids:
+            self.alumnos_ids.append(alumno_id)
+    #Metodo que muestra quienes estan inscritos a la asinatura
+    def mostrarInfo(self):
+        return f"Asignatura {self.nombre} (Prof: {self.profesor_id}, Alumnos: {len(self.alumnos_ids)})"
 
-    #getter
-    @property
-    def id(self):
-        return self.id
-    
-    @property
-    def nombre(self):
-        return self.nombre
-    
-    @property
-    def profesor(self):
-        return self.profesor
-    
-    @property
-    def alumno(self):
-        return self.alumno
-    
-    #setter
-    @id.setter
-    def id(self,nuevo_id:int):
-        self.id=nuevo_id
-
-    @nombre.setter
-    def nombre(self, nuevoNombre:str):
-        self.nombre=nuevoNombre
-
-    @profesor.setter
-    def profesor(self, nuevoProfesor:str):
-        self.profesor=nuevoProfesor
-
-    @alumno.setter
-    def alumno(self, nuevoAlumno:list):
-        self.alumno=nuevoAlumno
-    
-    #Metodo para asignar Profesor
-    def asignarProfesor(self,profesorAsignar:Profesor): 
-        self.profesor=profesorAsignar
-
-    #Metodo para inscribir alumno
-    def inscribirAlumno(self, alumnosAsignar):
-        if alumnosAsignar not in self.alumno:
-            self.alumno.append(alumnosAsignar)
-
-    #Metodo para listar alumnos
-    def listar(self):
-        return self.alumno
 
