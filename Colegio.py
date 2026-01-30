@@ -25,7 +25,7 @@ class Colegio:
     def buscarAlumno (self, idBusqueda):
         alumno = self.alumnos.get(idBusqueda)
         if alumno:
-            alumno.mostrar_info()
+            Alumno.Alumno.mostrarInfo(alumno)
         else:
             print("Alumno NO encontrado")
 
