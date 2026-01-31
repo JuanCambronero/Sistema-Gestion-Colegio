@@ -16,6 +16,6 @@ class Asignatura:
             self.alumnos.append(alumno_id)
     #Metodo que muestra quienes estan inscritos a la asinatura
     def mostrarInfo(self):
-        return f"Asignatura {self.nombre} (Prof: {self.profesor_id}, Alumnos: {len(self.alumnos_ids)})"
+        return f"Asignatura {self.nombre} (Prof: {self.profesor_id}, Alumnos: {len(self.alumnos)})"
 
 

@@ -1,8 +1,7 @@
 #Clase colegio, esta clase sirve para gestiornar alumnos, profesores y asignaturas
 import Alumno
 import Profesor
-import Alumno
-import Profesor
+import ClaseGrupo
 
 class Colegio:
 
@@ -51,5 +50,14 @@ class Colegio:
         for id, profe in self.profesores.items():
             print(f"{id} : {profe.mostrarInfo()}")
 
+    #GESTIÓN DE CLASES
+    def addClaseGrupo(self, claseGrupo : ClaseGrupo.ClaseGrupo ):
+        self.clases.append(claseGrupo)
+
+    def buscarClase(self, idBusqueda):
+        for c in self.clases:
+            if c.id == idBusqueda:
+                return c
+        return None
 
 

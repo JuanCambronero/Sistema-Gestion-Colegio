@@ -81,6 +81,100 @@ def menuProfesor(colegio):
             case _:
                 print("Selecione una opción valida porfavor")
 
+def menuGrupo (colegio):
+    while True:
+        print("\n=== MENU CLASES ===")
+        print("="*30)
+        print("1. Crear nueva clase")
+        print("2. Buscar clase")
+        print("3. Asignar tutor")
+        print("4. Añadir alumnos")
+        print("5. Lista de clase")
+        print("6. Mostrar Clase")
+        print("0. Volver al menú principal")
+
+        opcion = int(input("Selecciones una opción: "))
+        match opcion:
+            case 1:
+                print("===Crear Clase===")
+                id_clase = int(input("ID de la clase: "))
+                nombre = input("Nombre de la clase: ")
+                clase_grupo = ClaseGrupo(id_clase, nombre)
+                Colegio.addClaseGrupo(colegio, clase_grupo)
+                
+            case 2: 
+                print("===Buscar Clase===")
+                id_buscar = int(input("ID de la clase: "))
+                clase = Colegio.buscarClase(colegio, id_buscar)
+                if clase:
+                    print(clase.mostarInfo())
+                else:
+                    print("Clase NO encontrada")
+            case 3:
+                print("===Asignar Tutor===")
+                id_clase = int(input("ID de la clase: "))
+                clase = Colegio.buscarClase(colegio, id_clase)
+                if clase:
+                    id_profesor = int(input("ID del profesor tutor: "))
+                    profesor = colegio.profesores.get(id_profesor)
+                    if profesor:
+                        clase.asignarTutor(profesor)
+                        print("Tutor asignado correctamente")
+                    else:
+                        print("Profesor NO encontrado")
+                else:
+                    print("Clase NO encontrada")
+            case 4:
+                print("===Añadir Alumno al Grupo===")
+                id_clase = int(input("ID de la clase: "))
+                clase = Colegio.buscarClase(colegio, id_clase)
+                if clase:
+                    id_alumno = int(input("ID del alumno: "))
+                    alumno = colegio.alumnos.get(id_alumno)
+                    if alumno:
+                        clase.addAlumno(alumno)
+                        print("Alumno añadido correctamente")
+                    else:
+                        print("Alumno NO encontrado")
+                else:
+                    print("Clase NO encontrada")
+            case 5:
+                print("===Listar Grupos===")
+                if colegio.clases:
+                    for clase in colegio.clases:
+                        print(clase.mostarInfo())
+                else:
+                    print("No hay grupos registrados")
+            case 6:
+                print("===Datos Completos del Grupo===")
+                id_buscar = int(input("ID de la clase: "))
+                clase = Colegio.buscarClase(colegio, id_buscar)
+                if clase:
+                    print(f"\n{'='*50}")
+                    print(f"GRUPO: {clase.nombre} (ID: {clase.id})")
+                    print(f"{'='*50}")
+                    
+                    # Mostrar datos del tutor
+                    if clase.tutor:
+                        print(f"\nTUTOR:")
+                        print(f"  {clase.tutor.mostrarInfo()}")
+                    else:
+                        print(f"\nTUTOR: Sin asignar")
+                    
+                    # Mostrar datos de los alumnos
+                    print(f"\nALUMNOS ({len(clase.alumnos)}):")
+                    if clase.alumnos:
+                        for i, alumno in enumerate(clase.alumnos, 1):
+                            print(f"  {i}. {alumno.mostrarInfo()}")
+                    else:
+                        print("  No hay alumnos en este grupo")
+                    print(f"{'='*50}\n")
+                else:
+                    print("Clase NO encontrada")
+            case 0 :
+                break
+            case _:
+                print("Selecione una opción valida porfavor")
 
 
 
@@ -103,11 +197,12 @@ while True:
         case 2: 
             menuProfesor(colegio)
         case 3:
-            print("Grupos")
+            menuGrupo(colegio)
         case 4:
             print("Asignaturas")
         case 5:
             print("Listado General")
         case 0 :
             print("Saliendo...")
+            break
 
