@@ -27,15 +27,20 @@ def menuAlumno(colegio):
             case 2: 
                 print("===Buscar Alumnos===")
                 id_buscar = int(input("ID del alumno: "))
-                print(Colegio.buscarAlumno(colegio,id_buscar))
+                Colegio.buscarAlumno(colegio,id_buscar)
             case 3:
-                print("Eliminar Alumno")
+                print("===Eliminar Alumnos===")
+                id_buscar = int(input("ID del alumno: "))
+                Colegio.buscarAlumno(colegio,id_buscar)
+                print("Ha sido eliminado correctamente")
+                Colegio.eliminarAlumno(colegio,id_buscar)
             case 4:
-                print("Mostrar Alumnos")
-            case 5:
-                print("Volver al menú principal")
+                print("===Lista de Alumnos===")
+                Colegio.listarAlumnos(colegio)
             case 0 :
-                print("Volviendo")
+                break
+            case _:
+                print("Selecione una opción valida porfavor")
 
 colegio = Colegio("Litterator")
 while True:

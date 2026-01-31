@@ -3,7 +3,7 @@ from Alumno import Alumno
 #Esta clase simula unpromoción de alumnos frmada por alumnos y tutor
 class ClaseGrupo:
     #Constructor con los atributos
-    def __init__(self, id: int, nombre: str, tutor: Profesor = None):
+    def __init__(self, id, nombre, tutor: Profesor = None):
         self.id = id
         self.nombre = nombre
         self.tutor = tutor
@@ -19,6 +19,6 @@ class ClaseGrupo:
         return self.alumnos
     #Muestra los datos de la promoción
     def mostarInfo(self):
-        tutor_str = self.tutor.obtener_nombre() if self.tutor else "Sin"
-        return f"Grupo {self.nombre} (Tutor: {tutor_str}, Alumnos: {len(self.alumnos)})"
+        tutorNombre = self.tutor.obtener_nombre() if self.tutor else "Sin"
+        return f"Grupo {self.nombre} (Tutor: {tutorNombre}, Alumnos: {len(self.alumnos)})"
 

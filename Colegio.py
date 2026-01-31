@@ -1,14 +1,12 @@
 #Clase colegio, esta clase sirve para gestiornar alumnos, profesores y asignaturas
 import Alumno
 import Profesor
-
-
 import Alumno
 import Profesor
 
 class Colegio:
 
-    def __init__(self, nombre: str):
+    def __init__(self, nombre):
         self.nombre = nombre
         self.alumnos = {} 
         self.profesores = {} 
@@ -25,9 +23,13 @@ class Colegio:
     def buscarAlumno (self, idBusqueda):
         alumno = self.alumnos.get(idBusqueda)
         if alumno:
-            Alumno.Alumno.mostrarInfo(alumno)
+            print(Alumno.Alumno.mostrar_info(alumno))
         else:
             print("Alumno NO encontrado")
+    
+    def listarAlumnos (self):
+        for id , alumno in self.alumnos.values:
+            print(f"{id} : {Alumno.Alumno.mostrar_info(alumno)}")
 
     # GESTIÓN PROFESORES  
     def addProfesor(self, profesor : Profesor.Profesor):
