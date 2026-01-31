@@ -12,6 +12,7 @@ class Profesor(Personas):
         self.asignaturas.append(asignatura_id)
 #Metodo personalizado heredado de Persona
     def mostrarInfo(self):
-        return f"Departamento: {self.departamento}, Asignaturas: {self.asignaturas}"
+        return f"{super().mostrarInfo()} - Departamento: {self.departamento}, Asignaturas: {self.asignaturas}"
+
 
 

@@ -42,6 +42,49 @@ def menuAlumno(colegio):
             case _:
                 print("Selecione una opción valida porfavor")
 
+
+def menuProfesor(colegio):
+    while True:
+        print("\n=== MENU PROFESORES ===")
+        print("="*30)
+        print("1. Añadir nuevo profesor")
+        print("2. Buscar profesor por ID")
+        print("3. Eliminar profesor")
+        print("4. Listar todos los profesores")
+        print("0. Volver al menú principal")
+
+        opcion = int(input("Selecciones una opción: "))
+        match opcion:
+            case 1:
+                print("===Añadir Profesor===")
+                id_profe = int(input("ID del profesor: "))
+                nombre = input("Nombre completo: ")
+                email = input("Email: ")
+                depatamento = input("Departamento: ")
+                profesor = Profesor(id_profe,nombre,email,depatamento)
+                Colegio.addProfesor(colegio, profesor)
+            case 2: 
+                print("===Buscar Profesor===")
+                id_buscar = int(input("ID del profesor: "))
+                Colegio.buscarProfesor(colegio,id_buscar)
+            case 3:
+                print("===Eliminar Profesor===")
+                id_buscar = int(input("ID del profesor: "))
+                Colegio.buscarProfesor(colegio,id_buscar)
+                print("Ha sido eliminado correctamente")
+                Colegio.eliminarProfesor(colegio,id_buscar)
+            case 4:
+                print("===Lista de Profesores===")
+                Colegio.listarProfesores(colegio)
+            case 0 :
+                break
+            case _:
+                print("Selecione una opción valida porfavor")
+
+
+
+
+
 colegio = Colegio("Litterator")
 while True:
     print("\n=== SISTEMA GESTIÓN COLEGIO ===")
@@ -58,7 +101,7 @@ while True:
         case 1:
             menuAlumno(colegio)
         case 2: 
-            print("Profesores")
+            menuProfesor(colegio)
         case 3:
             print("Grupos")
         case 4:

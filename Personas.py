@@ -16,9 +16,6 @@ class Personas(ABC):
     def obtener_email(self):
         return self.email
 
-    def mostrar_info(self):
+    def mostrarInfo(self):
         return f"ID: {self.idPersona}, Nombre: {self.nombre}, Email: {self.email}"
-    #Este metodo se debe personalizar en cada clase
-    @abstractmethod
-    def mostrarInfo(self) -> str:
-        pass
+

@@ -8,4 +8,4 @@ class Alumno(Personas):
         self.grupo = grupo
 #Metodo personalizado heredado de Persona
     def mostrarInfo(self):
-        return f"Grupo: {self.grupo}"
+        return f"{super().mostrarInfo()} - Grupo: {self.grupo}"

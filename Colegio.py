@@ -23,13 +23,15 @@ class Colegio:
     def buscarAlumno (self, idBusqueda):
         alumno = self.alumnos.get(idBusqueda)
         if alumno:
-            print(Alumno.Alumno.mostrar_info(alumno))
+            print(Alumno.Alumno.mostrarInfo(alumno))
         else:
             print("Alumno NO encontrado")
     
-    def listarAlumnos (self):
-        for id , alumno in self.alumnos.values:
-            print(f"{id} : {Alumno.Alumno.mostrar_info(alumno)}")
+    def listarAlumnos(self):
+        for id, alumno in self.alumnos.items():
+            print(f"{id} : {alumno.mostrarInfo()}")
+
+
 
     # GESTIÓN PROFESORES  
     def addProfesor(self, profesor : Profesor.Profesor):
@@ -37,6 +39,17 @@ class Colegio:
 
     def eliminarProfesor(self, idEliminar):
         self.profesores.pop(idEliminar, None)
+    
+    def buscarProfesor (self, idBusqueda):
+        profesor = self.profesores.get(idBusqueda)
+        if profesor:
+            print(Profesor.Profesor.mostrarInfo(profesor))
+        else:
+            print("Profesor NO encontrado")
+    
+    def listarProfesores(self):
+        for id, profe in self.profesores.items():
+            print(f"{id} : {profe.mostrarInfo()}")
 
 
 
