@@ -402,7 +402,6 @@ while True:
     print("2. Profesores") 
     print("3. Grupos")
     print("4. Asignaturas")
-    print("5. Listado general")
     print("0. Salir")
 
     opcion = int(input("Selecciones una opción: "))
@@ -416,8 +415,6 @@ while True:
             menuGrupo(colegio)
         case 4:
             menuAsignatura(colegio)
-        case 5:
-            print("Listado General")
         case 0 :
             print("Saliendo...")
             break
