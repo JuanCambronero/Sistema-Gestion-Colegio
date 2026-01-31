@@ -1,6 +1,7 @@
 #Clase colegio, esta clase sirve para gestiornar alumnos, profesores y asignaturas
 import Alumno
 import Profesor
+import Asignatura
 import ClaseGrupo
 
 class Colegio:
@@ -60,4 +61,17 @@ class Colegio:
                 return c
         return None
 
+    #GESTIÓN DE ASIGNATURAS
+    def addAsignatura(self, asignatura : Asignatura.Asignatura):
+        self.asignatura[asignatura.id] = asignatura
+
+    def eliminarAsignatura(self, idEliminar):
+        self.asignatura.pop(idEliminar, None)
+
+    def buscarAsignatura(self, idBusqueda):
+        return self.asignatura.get(idBusqueda)
+
+    def listarAsignaturas(self):
+        for id, asig in self.asignatura.items():
+            print(f"{id} : {asig.mostrarInfo()}")
 
