@@ -61,7 +61,9 @@ Sistema de gestión escolar completo desarrollado como práctica de **Programaci
 | main    |  Estable      | Codigo funcional |
 | desarrollo |  En progreso | Experimentos      |
 ## Diagrama UML
-![Diagrama_UML_Gestion_Colegio_Detallado_page-0001](https://github.com/user-attachments/assets/e87dcae9-92b9-4b11-953d-d7c56eb3e36c)
+
+![Diagrama_UML_Gestion_Colegio_Detallado_page-0001](https://github.com/user-attachments/assets/d753a173-6128-4881-8717-d3f74228ac8b)
+
 
 
 
@@ -111,7 +113,7 @@ El sistema incluye datos de ejemplo que se cargan automáticamente:
 
 ## Memoria del proyecto
 
-[Memoria_trabajo_Poo_Grupo_Finalizado.pdf](https://github.com/user-attachments/files/25005613/Memoria_trabajo_Poo_Grupo_Finalizado.pdf)
+[Memoria_trabajo_Poo_Grupo_Finalizado.pdf](https://github.com/user-attachments/files/25005658/Memoria_trabajo_Poo_Grupo_Finalizado.pdf)
 
 
 
